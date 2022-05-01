@@ -1,0 +1,58 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String   @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     String[]
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Task {
+  comment     String?
+  contentTask String
+  createdAt   DateTime         @default(now())
+  demandeur   String
+  dueDate     DateTime
+  id          String           @id @default(cuid())
+  Status      EnumTaskStatus
+  title       String
+  updatedAt   DateTime         @updatedAt
+  severity    EnumTaskSeverity
+}
+
+model Severity {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Demandeur {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+enum EnumTaskStatus {
+  EnCours
+  Done
+  Pending
+  WaitngInfo
+}
+
+enum EnumTaskSeverity {
+  Urgent
+  MediumSerity
+  NotUrgent
+}
