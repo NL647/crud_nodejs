@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.12.6",
+  "appInfo": {
+    "name": "Taks manager",
+    "description": "Task manager application ",
+    "version": "tt6lvd74",
+    "id": "cl2ds3vnt8584001s68pqquc5x",
+    "url": "https://app.amplication.com/cl2ds3vnt8584001s68pqquc5x",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "cl2ds3vnt8584001s68pqquc5x",
+      "authProvider": "Jwt"
+    }
+  }
+}
